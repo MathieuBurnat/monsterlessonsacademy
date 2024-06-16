@@ -19,7 +19,8 @@ export class FooterComponent {
   });
   noTodosClass = computed(() => this.todosService.todosSig().length === 0);
   itemsLeftText = computed(
-    () => `item${this.activeCount() !== 1 ? 's' : ''} left`
+    () => `item${this.activeCount() > 1 ? 's' : ''} left`
+    // () => `item${this.activeCount() ==! 1 ? 's' : ''} left`
   );
 
   changeFilter(event: Event, filterName: FilterEnum): void {
